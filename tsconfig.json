@@ -5,12 +5,19 @@
     "moduleResolution": "Bundler",
     "jsx": "react-jsx",
     "strict": true,
+    "resolveJsonModule": true,
     "noEmit": true,
-    "lib": ["es2015"],
+    "lib": [
+      "es2019",
+      "dom",
+      "dom.iterable"
+    ],
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "noUnusedLocals": true
   },
-  "exclude": ["remotion.config.ts"]
+  "exclude": [
+    "remotion.config.ts"
+  ]
 }

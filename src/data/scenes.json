@@ -1,0 +1,27 @@
+{
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "intro",
+      "label": "THE START",
+      "title": "Make your next reel",
+      "accent": "next",
+      "note": "EDIT THE COPY IN src/data/scenes.json",
+      "narration": "This is your starter reel. Make it yours.",
+      "from": 0,
+      "duration": 120
+    },
+    {
+      "id": "outro",
+      "label": "THE END",
+      "title": "Now make it yours.",
+      "accent": "yours",
+      "note": "TWO SCENES · ONE VOICE · EIGHT SECONDS",
+      "narration": "Change the words, the visuals, and the voice.",
+      "from": 120,
+      "duration": 120
+    }
+  ]
+}

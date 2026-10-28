@@ -1,0 +1,103 @@
+{
+  "voice": "Brian — Deep, Resonant and Comforting (ElevenLabs)",
+  "model": "eleven_v4",
+  "lead": 0.12,
+  "scenes": {
+    "intro": {
+      "file": "voiceover/intro.wav",
+      "duration": 2.86,
+      "startOffset": 0.12,
+      "tempo": 1,
+      "words": [
+        {
+          "w": "This",
+          "start": 0.12,
+          "end": 0.36
+        },
+        {
+          "w": "is",
+          "start": 0.44,
+          "end": 0.52
+        },
+        {
+          "w": "your",
+          "start": 0.6,
+          "end": 0.76
+        },
+        {
+          "w": "starter",
+          "start": 0.84,
+          "end": 1.16
+        },
+        {
+          "w": "reel.",
+          "start": 1.24,
+          "end": 1.48
+        },
+        {
+          "w": "Make",
+          "start": 1.96,
+          "end": 2.12
+        },
+        {
+          "w": "it",
+          "start": 2.2,
+          "end": 2.28
+        },
+        {
+          "w": "yours.",
+          "start": 2.36,
+          "end": 2.84
+        }
+      ]
+    },
+    "outro": {
+      "file": "voiceover/outro.wav",
+      "duration": 3.28,
+      "startOffset": 0.12,
+      "tempo": 1,
+      "words": [
+        {
+          "w": "Change",
+          "start": 0.12,
+          "end": 0.52
+        },
+        {
+          "w": "the",
+          "start": 0.56,
+          "end": 0.6
+        },
+        {
+          "w": "words,",
+          "start": 0.68,
+          "end": 1.16
+        },
+        {
+          "w": "the",
+          "start": 1.52,
+          "end": 1.56
+        },
+        {
+          "w": "visuals,",
+          "start": 1.64,
+          "end": 2.2
+        },
+        {
+          "w": "and",
+          "start": 2.52,
+          "end": 2.6
+        },
+        {
+          "w": "the",
+          "start": 2.64,
+          "end": 2.68
+        },
+        {
+          "w": "voice.",
+          "start": 2.76,
+          "end": 3.24
+        }
+      ]
+    }
+  }
+}

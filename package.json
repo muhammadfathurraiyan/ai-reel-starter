@@ -1,7 +1,7 @@
 {
-  "name": "ai-reels",
+  "name": "ai-reel-starter",
   "version": "1.0.0",
-  "description": "My Remotion video",
+  "description": "9:16 explainer reel starter — Remotion motion graphics + ElevenLabs narration",
   "repository": {},
   "license": "UNLICENSED",
   "engines": {
@@ -9,7 +9,11 @@
   },
   "private": true,
   "dependencies": {
+    "@elevenlabs/elevenlabs-js": "^2.75.0",
     "@remotion/cli": "4.0.539",
+    "@remotion/google-fonts": "4.0.539",
+    "@remotion/media": "4.0.539",
+    "@remotion/transitions": "4.0.539",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "remotion": "4.0.539"
@@ -24,9 +28,14 @@
   },
   "scripts": {
     "dev": "remotion studio",
+    "render": "remotion render src/index.ts Reel out/reel.mp4 --codec=h264 --crf=18 --pixel-format=yuv420p --audio-codec=aac --audio-bitrate=192k --sample-rate=48000",
+    "still": "remotion still src/index.ts Reel out/cover.png --frame=30",
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
-    "lint": "eslint src && tsc"
+    "lint": "eslint src && tsc",
+    "check": "npm run lint && node scripts/check-timeline.mjs",
+    "voiceover": "node scripts/generate-voiceover.mjs",
+    "audio": "node scripts/generate-audio.mjs"
   },
   "allowScripts": {
     "esbuild": false
