@@ -234,7 +234,7 @@ ffmpeg -hide_banner -nostats -i out/reel.mp4 -af loudnorm=I=-14:TP=-1.5:print_fo
 - **Fonts**: Anton, Inter Tight, IBM Plex Mono via Google Fonts (SIL OFL).
 - **Music/SFX**: synthesized by `scripts/generate-audio.mjs`. No third-party samples.
 - **Narration**: generated with your own ElevenLabs account — check their terms before publishing.
-- **Licence**: `UNLICENSED` in `package.json`; add one before publishing publicly.
+- **Licence**: MIT — see [LICENSE](LICENSE). The code is yours to fork and reuse.
 - `.agents/skills/` contains vendored Remotion skill docs (from `remotion-dev/skills`); optional
   reading, not required to build.
 

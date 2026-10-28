@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "9:16 explainer reel starter — Remotion motion graphics + ElevenLabs narration",
   "repository": {},
-  "license": "UNLICENSED",
+  "license": "MIT",
   "engines": {
     "node": "^20.19.0 || ^22.13.0 || >=24"
   },
