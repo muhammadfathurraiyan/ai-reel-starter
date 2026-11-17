@@ -78,6 +78,8 @@ is exported in your shell.
 | `npm run dev` | Remotion Studio preview with hot reload |
 | `npm run render` | render `Reel` → `out/reel.mp4` (H.264 CRF 18, AAC 192 kbps, 48 kHz) |
 | `npm run still` | export a cover frame → `out/cover.png` (frame 30) |
+| `npm run render:site` | render `SiteCut` (horizontal example) → `out/site-cut.mp4` (silent) |
+| `npm run still:site` | export a `SiteCut` frame → `out/site-cover.png` (frame 330) |
 | `npm run check` | ESLint + TypeScript + timeline/voiceover/asset validation |
 | `npm run voiceover` | synthesize all narration from `scenes.json` |
 | `npm run voiceover -- outro` | re-synthesize only the listed scene ids (saves credits) |
@@ -108,6 +110,9 @@ src/
   scenes/
     Intro.tsx              light paper scene
     Outro.tsx              dark espresso finale card
+  site/
+    SiteCut.tsx            second composition: silent screen-recording cut (see below)
+    camera.ts              its virtual-camera keyframes
   lib/
     motion.ts              COLORS, EASE, clamp, pop
     fonts.ts               Anton + Inter Tight + IBM Plex Mono (Google Fonts)
@@ -156,6 +161,33 @@ maps them onto the narrated words, trims the read to its scene window, and write
 
 The full breakdown — render graph, timeline contract, wipe mechanics, audio graph, checker
 rules — is in **[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)**.
+
+---
+
+## Site cut: a second composition
+
+The repo also ships `SiteCut` — a **horizontal** (1512 × 982) example showing how to edit an
+ordinary screen recording instead of building motion graphics: the source video plays 1:1 while
+a virtual camera eases toward the region under the cursor on hover/click moments.
+
+- `src/site/camera.ts` — the whole edit plan: keyframes `{ f, z, x, y }` where `f` is the output
+  frame, `z` the crop factor (**1.0 = the entire recording fills the frame**) and `x, y` the focus
+  point in source pixels. Tune the edit here.
+- `src/site/SiteCut.tsx` — the composition: fitted video + clamped camera transform (the view can
+  never pan past the recording's edges).
+- Source footage goes in `public/video/site-source.mp4` — pre-trimmed to constant 30 fps and
+  stripped of audio (the cut is silent). `public/video/` and `raw/` are gitignored.
+
+Prepare a recording for it:
+
+```console
+ffmpeg -i raw/my-recording.mov -t 54 -vf fps=30 -an \
+  -c:v libx264 -crf 18 -preset medium -pix_fmt yuv420p -movflags +faststart \
+  public/video/site-source.mp4
+```
+
+`npm run check` validates the `Reel` timeline only — the site cut has no narration or timeline
+data to check, so verify it with `npm run still:site` at key frames instead.
 
 ---
 

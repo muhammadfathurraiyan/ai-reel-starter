@@ -12,5 +12,9 @@ out/
 # Local scratch space (renders, backups, test clips)
 .tmp/
 
+# Source footage + site cut assets (too big for git)
+raw/
+public/video/
+
 # OS noise
 .DS_Store

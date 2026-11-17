@@ -30,6 +30,8 @@
     "dev": "remotion studio",
     "render": "remotion render src/index.ts Reel out/reel.mp4 --codec=h264 --crf=18 --pixel-format=yuv420p --audio-codec=aac --audio-bitrate=192k --sample-rate=48000",
     "still": "remotion still src/index.ts Reel out/cover.png --frame=30",
+    "render:site": "remotion render src/index.ts SiteCut out/site-cut.mp4 --codec=h264 --crf=18 --pixel-format=yuv420p",
+    "still:site": "remotion still src/index.ts SiteCut out/site-cover.png --frame=330",
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
     "lint": "eslint src && tsc",

@@ -13,6 +13,12 @@ preserved — the job is to turn it into the next real reel.
 Hard spec: **1080 × 1920, 30 fps, English**, espresso/cream/caramel editorial palette,
 word-level captions, voice-first mix.
 
+There is also a **second composition, `SiteCut`** (`src/site/`): a silent, horizontal
+1512 × 982 cut of a screen recording driven by virtual-camera keyframes in `src/site/camera.ts`
+(`z` is a crop factor, 1.0 = full recording; `x, y` are source pixels). Its source footage lives
+at `public/video/site-source.mp4` (gitignored). `npm run check` does **not** validate it — verify
+changes with `npm run still:site` at key frames and `npm run render:site`.
+
 ## Commands
 
 ```console
@@ -20,6 +26,8 @@ npm run dev        # Remotion Studio
 npm run check      # ESLint + tsc + timeline/VO/asset validation — run before finishing
 npm run render     # out/reel.mp4
 npm run still      # out/cover.png (frame 30)
+npm run render:site  # out/site-cut.mp4 (SiteCut, silent)
+npm run still:site   # out/site-cover.png (SiteCut, frame 330)
 npm run voiceover  # regenerate all narration (costs ElevenLabs credits)
 npm run voiceover -- outro   # regenerate only those scene ids
 npm run audio      # rebuild music + whoosh
